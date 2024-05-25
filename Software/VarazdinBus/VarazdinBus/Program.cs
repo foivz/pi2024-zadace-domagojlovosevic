@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace VarazdinBus
         [STAThread]
         static void Main()
         {
+            DB.SetConfiguration("PI2324_dlovosevi22_DB", "PI2324_dlovosevi22_User", "(lAbpL=[");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

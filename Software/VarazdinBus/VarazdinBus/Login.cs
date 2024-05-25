@@ -21,5 +21,24 @@ namespace VarazdinBus
         {
             Close();
         }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                MessageBox.Show("Unesite korisničko ime!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (txtPassword.Text == "")
+            {
+                MessageBox.Show("Unesite lozinku!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                    //implementirati login
+            }
+        }
     }
 }
