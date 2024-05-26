@@ -15,6 +15,7 @@ namespace VarazdinBus
     public partial class Login : Form
     {
         public static Vozac ulogiraniVozac { get; set; }
+        public static Djelatnik ulogiraniDjelatnik { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -40,15 +41,34 @@ namespace VarazdinBus
                 MessageBox.Show("Unesite lozinku!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                ulogiraniVozac   = VozacRepository.GetVozac(txtUsername.Text);
-                if (ulogiraniVozac != null && ulogiraniVozac.password == txtPassword.Text)
+                if (checkBoxVozac.Checked)
                 {
-                    MessageBox.Show("Tocna lozinka!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ulogiraniVozac = VozacRepository.GetVozac(txtUsername.Text);
+                    if (ulogiraniVozac != null && ulogiraniVozac.password == txtPassword.Text)
+                    {
+                        MessageBox.Show("Uspješna prijava vozača!", "Prijava", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } else
+                    {
+                        MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 } else
                 {
-                    MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ulogiraniDjelatnik = DjelatnikRepository.GetDjelatnik(txtUsername.Text);
+                    if (ulogiraniDjelatnik != null && ulogiraniDjelatnik.password == txtPassword.Text)
+                    {
+                        MessageBox.Show("Uspješna prijava djelatnika!", "Prijava", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } else
+                    {
+                        MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
+        }
+
+
+        private void checkBoxVozac_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

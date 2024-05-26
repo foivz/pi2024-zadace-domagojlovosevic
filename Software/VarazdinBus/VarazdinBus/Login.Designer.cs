@@ -34,6 +34,7 @@
             this.button_close = new System.Windows.Forms.Button();
             this.label_username = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
+            this.checkBoxVozac = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -60,7 +61,7 @@
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(88, 192);
+            this.button_login.Location = new System.Drawing.Point(88, 229);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(261, 36);
             this.button_login.TabIndex = 5;
@@ -96,11 +97,23 @@
             this.label_password.TabIndex = 8;
             this.label_password.Text = "Lozinka";
             // 
+            // checkBoxVozac
+            // 
+            this.checkBoxVozac.AutoSize = true;
+            this.checkBoxVozac.Location = new System.Drawing.Point(88, 192);
+            this.checkBoxVozac.Name = "checkBoxVozac";
+            this.checkBoxVozac.Size = new System.Drawing.Size(134, 17);
+            this.checkBoxVozac.TabIndex = 9;
+            this.checkBoxVozac.Text = "Ulogiraj se kao vozac?";
+            this.checkBoxVozac.UseVisualStyleBackColor = true;
+            this.checkBoxVozac.CheckedChanged += new System.EventHandler(this.checkBoxVozac_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 306);
+            this.Controls.Add(this.checkBoxVozac);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.label_username);
             this.Controls.Add(this.button_close);
@@ -123,6 +136,7 @@
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Label label_username;
         private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.CheckBox checkBoxVozac;
     }
 }
 
