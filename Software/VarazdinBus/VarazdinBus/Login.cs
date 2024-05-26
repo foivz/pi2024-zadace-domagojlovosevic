@@ -12,6 +12,15 @@ using VarazdinBus.Models;
 using VarazdinBus.Repositories;
 namespace VarazdinBus
 {
+    /*      DJELATNIK
+     * jknezevic  pass:password123
+     * imaric     pass:password456
+     * */ 
+     /*      VOZAC
+     * markohorvat  pass:marko123
+     * ivananovak     pass:ivana456
+     * */ 
+
     public partial class Login : Form
     {
         public static Vozac ulogiraniVozac { get; set; }
@@ -67,6 +76,11 @@ namespace VarazdinBus
 
 
         private void checkBoxVozac_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
