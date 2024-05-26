@@ -57,5 +57,20 @@ namespace VarazdinBus
                 MessageBox.Show($"Greška kod brisanja podataka, odaberite cijeli red kada želite obrisati liniju", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var linije = LinijaRepository.GetLinijeSearch(txtSearch.Text);
+            dataGridView1.DataSource = linije;
+            if (txtSearch.Text == "")
+            {
+                PrikaziLinije();
+            }
+        }
     }
 }

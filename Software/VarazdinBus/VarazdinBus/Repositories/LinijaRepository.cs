@@ -79,6 +79,21 @@ namespace VarazdinBus.Repositories
             DB.ExecuteCommand(sql);
             DB.CloseConnection();
         }
+        public static List<Linija> GetLinijeSearch(string nazivLinije)
+        {
+            List<Linija> linije = new List<Linija>();
 
+            string sql = $"SELECT * FROM dbo.Linija WHERE nazivLinije LIKE '%{nazivLinije}%'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Linija linija = CreateLinija(reader);
+                linije.Add(linija);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return linije;
+        }
     }
 }
