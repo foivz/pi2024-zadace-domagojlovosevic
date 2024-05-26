@@ -72,7 +72,13 @@ namespace VarazdinBus.Repositories
                 MessageBox.Show($"Greška kod unosa podataka: {ex.Message}", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        public static void DeleteTable(string id)
+        {
+            string sql = $"DELETE FROM dbo.Linija WHERE id_linije='{id}'";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
 
     }
 }

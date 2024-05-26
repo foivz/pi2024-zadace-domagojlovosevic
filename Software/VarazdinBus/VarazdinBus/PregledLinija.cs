@@ -39,5 +39,23 @@ namespace VarazdinBus
             unosLinija.ShowDialog();
             Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string odabranaLinija = dataGridView1.SelectedRows[0].Cells["idLinije"].Value.ToString();
+                LinijaRepository.DeleteTable(odabranaLinija);
+                PrikaziLinije();
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Greška kod brisanja podataka, odaberite cijeli red kada želite obrisati liniju", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
