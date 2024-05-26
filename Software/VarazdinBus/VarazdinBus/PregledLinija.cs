@@ -31,5 +31,13 @@ namespace VarazdinBus
         {
             PrikaziLinije();
         }
+
+        private void btnUnesiLiniju_Click(object sender, EventArgs e)
+        {
+            UnosLinije unosLinija = new UnosLinije();
+            Hide();
+            unosLinija.ShowDialog();
+            Close();
+        }
     }
 }

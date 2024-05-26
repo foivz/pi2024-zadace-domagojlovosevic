@@ -71,6 +71,12 @@
     <Compile Include="Repositories\LinijaRepository.cs" />
     <Compile Include="Repositories\StanicaRepository.cs" />
     <Compile Include="Repositories\VozacRepository.cs" />
+    <Compile Include="UnosLinije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosLinije.Designer.cs">
+      <DependentUpon>UnosLinije.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +92,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UnosLinije.resx">
+      <DependentUpon>UnosLinije.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

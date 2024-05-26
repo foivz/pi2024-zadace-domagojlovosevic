@@ -44,6 +44,7 @@
             this.btnUnesiLiniju.TabIndex = 1;
             this.btnUnesiLiniju.Text = "Unesi Liniju";
             this.btnUnesiLiniju.UseVisualStyleBackColor = true;
+            this.btnUnesiLiniju.Click += new System.EventHandler(this.btnUnesiLiniju_Click);
             // 
             // lblLinije
             // 
