@@ -65,7 +65,10 @@ namespace VarazdinBus
                     ulogiraniDjelatnik = DjelatnikRepository.GetDjelatnik(txtUsername.Text);
                     if (ulogiraniDjelatnik != null && ulogiraniDjelatnik.password == txtPassword.Text)
                     {
-                        MessageBox.Show("Uspješna prijava djelatnika!", "Prijava", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PregledLinija pregledLinija = new PregledLinija();
+                        Hide();
+                        pregledLinija.ShowDialog();
+                        Close();
                     } else
                     {
                         MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -58,6 +58,12 @@
     <Compile Include="Models\Djelatnik.cs" />
     <Compile Include="Models\Stanica.cs" />
     <Compile Include="Models\vozac.cs" />
+    <Compile Include="PregledLinija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledLinija.Designer.cs">
+      <DependentUpon>PregledLinija.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DjelatnikRepository.cs" />
@@ -65,6 +71,9 @@
     <Compile Include="Repositories\VozacRepository.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledLinija.resx">
+      <DependentUpon>PregledLinija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
