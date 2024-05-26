@@ -3,11 +3,27 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using VarazdinBus.Models;
 using DBLayer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace VarazdinBus.Repositories
 {
     public class StanicaRepository
     {
+        public static string GetStanicaIme(int idStanice)
+        {
+            string sql = $"SELECT * FROM dbo.Stanica WHERE id_stanice ='{idStanice}'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            Stanica stanica = null;
+            if (reader.HasRows == true)
+            {
+                reader.Read();
+                stanica = CreateStanica(reader);
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return stanica.nazivStanice;
+        }
         public static List<Stanica> GetStanice()
         {
             var stanice = new List<Stanica>();

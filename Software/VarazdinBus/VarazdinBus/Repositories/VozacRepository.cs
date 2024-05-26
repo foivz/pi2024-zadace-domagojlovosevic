@@ -57,5 +57,20 @@ namespace VarazdinBus.Repositories
 
             return vozac;
         }
+        public static string GetVozacUsername(int vozacId)
+        {
+            string sql = $"SELECT * FROM dbo.Vozaci WHERE vozac_id ='{vozacId}'";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            Vozac vozac = null;
+            if (reader.HasRows == true)
+            {
+                reader.Read();
+                vozac = CreateObject(reader);
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return vozac.imeVozaca + " " + vozac.prezimeVozaca;
+        }
     }
 }
