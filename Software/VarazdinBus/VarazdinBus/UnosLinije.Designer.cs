@@ -37,8 +37,6 @@
             this.cmbPocetnaStanica = new System.Windows.Forms.ComboBox();
             this.cmbZavrsnaStanica = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.datePocetak = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.timePolaska = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -132,26 +130,10 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Završna stanica";
             // 
-            // datePocetak
-            // 
-            this.datePocetak.Location = new System.Drawing.Point(413, 162);
-            this.datePocetak.Name = "datePocetak";
-            this.datePocetak.Size = new System.Drawing.Size(200, 20);
-            this.datePocetak.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(410, 146);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Datum početka";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(410, 204);
+            this.label7.Location = new System.Drawing.Point(410, 146);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 19;
@@ -159,15 +141,17 @@
             // 
             // timePolaska
             // 
-            this.timePolaska.Location = new System.Drawing.Point(413, 221);
+            this.timePolaska.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePolaska.Location = new System.Drawing.Point(413, 162);
             this.timePolaska.Name = "timePolaska";
+            this.timePolaska.ShowUpDown = true;
             this.timePolaska.Size = new System.Drawing.Size(200, 20);
             this.timePolaska.TabIndex = 18;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(410, 262);
+            this.label8.Location = new System.Drawing.Point(410, 204);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 21;
@@ -175,10 +159,13 @@
             // 
             // timeDolaska
             // 
-            this.timeDolaska.Location = new System.Drawing.Point(413, 279);
+            this.timeDolaska.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeDolaska.Location = new System.Drawing.Point(413, 221);
             this.timeDolaska.Name = "timeDolaska";
+            this.timeDolaska.ShowUpDown = true;
             this.timeDolaska.Size = new System.Drawing.Size(200, 20);
             this.timeDolaska.TabIndex = 20;
+            this.timeDolaska.ValueChanged += new System.EventHandler(this.timeDolaska_ValueChanged);
             // 
             // cmbVozac
             // 
@@ -235,8 +222,6 @@
             this.Controls.Add(this.timeDolaska);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.timePolaska);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.datePocetak);
             this.Controls.Add(this.cmbZavrsnaStanica);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbPocetnaStanica);
@@ -268,8 +253,6 @@
         private System.Windows.Forms.ComboBox cmbPocetnaStanica;
         private System.Windows.Forms.ComboBox cmbZavrsnaStanica;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker datePocetak;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker timePolaska;
         private System.Windows.Forms.Label label8;

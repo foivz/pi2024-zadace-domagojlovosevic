@@ -51,12 +51,25 @@ namespace VarazdinBus
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string nazivLinije = txtNazivLinije.Text;
+            int pocetnaStanicaID = (int)cmbPocetnaStanica.SelectedValue;
+            int zavrsnaStanicaID = (int)cmbZavrsnaStanica.SelectedValue;
+            TimeSpan vrijemePolaska = timePolaska.Value.TimeOfDay;
+            TimeSpan vrijemeDolaska = timeDolaska.Value.TimeOfDay;
+            int vozaciId = Convert.ToInt32(cmbVozac.SelectedValue);
+      
 
+            LinijaRepository.DodajNovuLiniju(nazivLinije, pocetnaStanicaID, zavrsnaStanicaID, vrijemePolaska, vrijemeDolaska, vozaciId);
         }
 
         private void UnosLinije_Load(object sender, EventArgs e)
         {
             DodajIzvorePodataka();
+        }
+
+        private void timeDolaska_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

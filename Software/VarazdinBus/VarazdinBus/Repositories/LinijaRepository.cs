@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using VarazdinBus.Models;
 using DBLayer;
+using System.Windows.Forms;
 
 namespace VarazdinBus.Repositories
 {
@@ -54,6 +55,24 @@ namespace VarazdinBus.Repositories
                 vozaci = vozaci
             };
         }
+        public static void DodajNovuLiniju(string nazivLinije, int pocetnaStanicaID, int zavrsnaStanicaID, TimeSpan vrijemePolaska, TimeSpan vrijemeDolaska, int vozaciId)
+        {
+            string sql = $"INSERT INTO dbo.Linija (nazivLinije, pocetnaStanicaID, zavrsnaStanicaID, vrijemePolaska, vrijemeDolaska, vozaci_id) " +
+             $"VALUES ('{nazivLinije}', {pocetnaStanicaID}, {zavrsnaStanicaID}, '{vrijemePolaska}', " +
+             $"'{vrijemeDolaska}', {vozaciId})";
+
+            try
+            {
+                DB.OpenConnection();
+                DB.ExecuteCommand(sql);
+                DB.CloseConnection();
+                MessageBox.Show("Unesna je nova linija", "Uspjeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Greška kod unosa podataka: {ex.Message}", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
     }
 }
