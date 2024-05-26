@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VarazdinBus.Models;
 
+using VarazdinBus.Repositories;
 namespace VarazdinBus
 {
     public partial class Login : Form
     {
+        public static Vozac ulogiraniVozac { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -37,7 +40,14 @@ namespace VarazdinBus
                 MessageBox.Show("Unesite lozinku!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                    //implementirati login
+                ulogiraniVozac   = VozacRepository.GetVozac(txtUsername.Text);
+                if (ulogiraniVozac != null && ulogiraniVozac.password == txtPassword.Text)
+                {
+                    MessageBox.Show("Tocna lozinka!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } else
+                {
+                    MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
