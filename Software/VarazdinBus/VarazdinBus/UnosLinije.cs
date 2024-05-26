@@ -34,5 +34,15 @@ namespace VarazdinBus
             pregledLinija.ShowDialog();
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UnosLinije_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
