@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VarazdinBus.Repositories;
 
 namespace VarazdinBus
 {
@@ -15,6 +16,20 @@ namespace VarazdinBus
         public PregledLinija()
         {
             InitializeComponent();
+        }
+        private void PrikaziLinije()
+        {
+            var linije = LinijaRepository.GetLinije();
+            dataGridView1.DataSource = linije;
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PregledLinija_Load(object sender, EventArgs e)
+        {
+            PrikaziLinije();
         }
     }
 }

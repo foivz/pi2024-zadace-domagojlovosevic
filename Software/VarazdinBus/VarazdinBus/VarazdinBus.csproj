@@ -56,6 +56,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Djelatnik.cs" />
+    <Compile Include="Models\Linija.cs" />
     <Compile Include="Models\Stanica.cs" />
     <Compile Include="Models\vozac.cs" />
     <Compile Include="PregledLinija.cs">
@@ -67,6 +68,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DjelatnikRepository.cs" />
+    <Compile Include="Repositories\LinijaRepository.cs" />
     <Compile Include="Repositories\StanicaRepository.cs" />
     <Compile Include="Repositories\VozacRepository.cs" />
     <EmbeddedResource Include="Login.resx">
