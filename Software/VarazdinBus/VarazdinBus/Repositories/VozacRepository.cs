@@ -32,6 +32,27 @@ namespace VarazdinBus.Repositories
             return vozac;
         }
 
+        public static List<Vozac> GetAllVozaci()
+        {
+            List<Vozac> vozaci = new List<Vozac>();
+            string sql = "SELECT * FROM dbo.Vozaci";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Vozac vozac = CreateObject(reader);
+                    vozaci.Add(vozac);
+                }
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return vozaci;
+        }
+
+
+
         private static Vozac CreateObject(SqlDataReader reader)
         {
             int vozacId = int.Parse(reader["vozac_id"].ToString());
