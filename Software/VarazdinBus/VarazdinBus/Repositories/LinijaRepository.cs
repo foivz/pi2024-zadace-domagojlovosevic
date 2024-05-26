@@ -9,6 +9,27 @@ namespace VarazdinBus.Repositories
 {
     public class LinijaRepository
     {
+        public static Linija GetLinijaByName(string nazivLinije)
+        {
+            string sql = $"SELECT * FROM dbo.Linija WHERE nazivLinije = '{nazivLinije}'";
+            return FetchLinija(sql);
+        }
+
+
+        private static Linija FetchLinija(string sql)
+        {
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            Linija linija = null;
+            if (reader.HasRows == true)
+            {
+                reader.Read();
+                linija = CreateLinija(reader);
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return linija;
+        }
 
         public static List<Linija> GetLinije()
         {
@@ -95,5 +116,6 @@ namespace VarazdinBus.Repositories
             DB.CloseConnection();
             return linije;
         }
+
     }
 }
