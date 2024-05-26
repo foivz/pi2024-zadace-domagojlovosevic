@@ -53,7 +53,7 @@
             // lblLinije
             // 
             this.lblLinije.AutoSize = true;
-            this.lblLinije.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLinije.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLinije.Location = new System.Drawing.Point(5, 9);
             this.lblLinije.Name = "lblLinije";
             this.lblLinije.Size = new System.Drawing.Size(156, 39);
