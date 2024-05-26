@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VarazdinBus.Repositories;
 
 namespace VarazdinBus
 {
@@ -26,7 +27,20 @@ namespace VarazdinBus
         {
 
         }
+        private void DodajIzvorePodataka()
+        {
+            cmbVozac.DataSource = VozacRepository.GetAllVozaci();
+            cmbVozac.DisplayMember = "imeVozaca";
+            cmbVozac.ValueMember = "vozacId";
+            cmbPocetnaStanica.DataSource = StanicaRepository.GetStanice();
+            cmbPocetnaStanica.DisplayMember = "nazivStanice";
+            cmbPocetnaStanica.ValueMember = "id_stanice";
+            cmbZavrsnaStanica.DataSource = StanicaRepository.GetStanice();
+            cmbZavrsnaStanica.DisplayMember = "nazivStanice";
+            cmbZavrsnaStanica.ValueMember = "id_stanice";
 
+
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             PregledLinija pregledLinija = new PregledLinija();
@@ -42,7 +56,7 @@ namespace VarazdinBus
 
         private void UnosLinije_Load(object sender, EventArgs e)
         {
-
+            DodajIzvorePodataka();
         }
     }
 }
