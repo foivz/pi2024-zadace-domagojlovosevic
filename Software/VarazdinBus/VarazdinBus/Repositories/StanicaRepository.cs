@@ -55,5 +55,6 @@ namespace VarazdinBus.Repositories
                 lokacijaStanice = lokacijaStanice
             };
         }
+
     }
 }

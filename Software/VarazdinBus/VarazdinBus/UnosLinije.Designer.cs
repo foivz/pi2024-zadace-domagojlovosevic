@@ -45,6 +45,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnUnesi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnIzmjeni = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUnos
@@ -54,9 +55,9 @@
             this.lblUnos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblUnos.Location = new System.Drawing.Point(37, 9);
             this.lblUnos.Name = "lblUnos";
-            this.lblUnos.Size = new System.Drawing.Size(282, 42);
+            this.lblUnos.Size = new System.Drawing.Size(190, 42);
             this.lblUnos.TabIndex = 0;
-            this.lblUnos.Text = "Unos nove linije";
+            this.lblUnos.Text = "Unos linija";
             this.lblUnos.Click += new System.EventHandler(this.lblUnos_Click);
             // 
             // label1
@@ -209,11 +210,23 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnIzmjeni
+            // 
+            this.btnIzmjeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzmjeni.Location = new System.Drawing.Point(432, 450);
+            this.btnIzmjeni.Name = "btnIzmjeni";
+            this.btnIzmjeni.Size = new System.Drawing.Size(130, 39);
+            this.btnIzmjeni.TabIndex = 26;
+            this.btnIzmjeni.Text = "Izmjeni liniju";
+            this.btnIzmjeni.UseVisualStyleBackColor = true;
+            this.btnIzmjeni.Click += new System.EventHandler(this.btnIzmjeni_Click);
+            // 
             // UnosLinije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 501);
+            this.Controls.Add(this.btnIzmjeni);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnUnesi);
             this.Controls.Add(this.cmbVozac);
@@ -261,5 +274,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUnesi;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.Button btnIzmjeni;
     }
 }

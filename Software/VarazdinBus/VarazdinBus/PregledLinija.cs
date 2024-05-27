@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace VarazdinBus
 
         private void btnUnesiLiniju_Click(object sender, EventArgs e)
         {
-            UnosLinije unosLinija = new UnosLinije();
+            UnosLinije unosLinija = new UnosLinije("");
             Hide();
             unosLinija.ShowDialog();
             Close();
@@ -42,7 +43,11 @@ namespace VarazdinBus
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            string odabranaLinija = dataGridView1.SelectedRows[0].Cells["NazivLinije"].Value.ToString();
+            UnosLinije unosLinije = new UnosLinije(odabranaLinija);
+            Hide();
+            unosLinije.ShowDialog();
+            Close();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

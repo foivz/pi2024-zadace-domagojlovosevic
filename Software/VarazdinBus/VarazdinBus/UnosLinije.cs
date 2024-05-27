@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VarazdinBus.Models;
 using VarazdinBus.Repositories;
 
 namespace VarazdinBus
 {
     public partial class UnosLinije : Form
     {
-        public UnosLinije()
+        private Linija linija;
+        private string imeLinije;
+        public UnosLinije(string linijaIme)
         {
+            imeLinije = linijaIme;
             InitializeComponent();
+            linija = LinijaRepository.GetLinijaByName(linijaIme);
         }
 
         private void lblUnos_Click(object sender, EventArgs e)
@@ -29,19 +34,26 @@ namespace VarazdinBus
         }
         private void DodajIzvorePodataka()
         {
-            cmbVozac.DataSource = VozacRepository.GetAllVozaci();
-            cmbVozac.DisplayMember = "imeVozaca";
-            cmbVozac.ValueMember = "vozacId";
-            cmbPocetnaStanica.DataSource = StanicaRepository.GetStanice();
-            cmbPocetnaStanica.DisplayMember = "nazivStanice";
-            cmbPocetnaStanica.ValueMember = "id_stanice";
-            cmbZavrsnaStanica.DataSource = StanicaRepository.GetStanice();
-            cmbZavrsnaStanica.DisplayMember = "nazivStanice";
-            cmbZavrsnaStanica.ValueMember = "id_stanice";
-
-
+            if (imeLinije != "")
+            {
+                txtNazivLinije.Text = linija.NazivLinije;
+                timePolaska.Value = DateTime.Today.Add(linija.VrijemePolaska.TimeOfDay);
+                timeDolaska.Value = DateTime.Today.Add(linija.VrijemeDolaska.TimeOfDay);
+            }
+            
+                cmbVozac.DataSource = VozacRepository.GetAllVozaci();
+                cmbVozac.DisplayMember = "imeVozaca";
+                cmbVozac.ValueMember = "vozacId";
+                cmbPocetnaStanica.DataSource = StanicaRepository.GetStanice();
+                cmbPocetnaStanica.DisplayMember = "nazivStanice";
+                cmbPocetnaStanica.ValueMember = "id_stanice";
+                cmbZavrsnaStanica.DataSource = StanicaRepository.GetStanice();
+                cmbZavrsnaStanica.DisplayMember = "nazivStanice";
+                cmbZavrsnaStanica.ValueMember = "id_stanice";
+            
         }
-        private void button2_Click(object sender, EventArgs e)
+
+    private void button2_Click(object sender, EventArgs e)
         {
             PregledLinija pregledLinija = new PregledLinija();
             Hide();
@@ -71,5 +83,26 @@ namespace VarazdinBus
         {
 
         }
+
+        private void btnIzmjeni_Click(object sender, EventArgs e)
+        {
+            string nazivLinije = txtNazivLinije.Text;
+            int pocetnaStanicaID = (int)cmbPocetnaStanica.SelectedValue;
+            int zavrsnaStanicaID = (int)cmbZavrsnaStanica.SelectedValue;
+            TimeSpan vrijemePolaska = timePolaska.Value.TimeOfDay;
+            TimeSpan vrijemeDolaska = timeDolaska.Value.TimeOfDay;
+            int vozaciId = Convert.ToInt32(cmbVozac.SelectedValue);
+
+            // Dohvat ID-a odabrane linije
+            int selectedLinijaId = linija.IdLinije;
+
+            // Izvršavanje ažuriranja linije
+            LinijaRepository.IzmjeniLiniju(selectedLinijaId, nazivLinije, pocetnaStanicaID, zavrsnaStanicaID, vrijemePolaska, vrijemeDolaska, vozaciId);
+
+            // Obavijest korisniku o uspješnom ažuriranju
+            MessageBox.Show("Linija je uspješno izmijenjena.", "Uspjeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
     }
 }

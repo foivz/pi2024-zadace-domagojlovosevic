@@ -116,6 +116,23 @@ namespace VarazdinBus.Repositories
             DB.CloseConnection();
             return linije;
         }
+        public static void IzmjeniLiniju(int idLinije, string nazivLinije, int pocetnaStanicaID, int zavrsnaStanicaID, TimeSpan vrijemePolaska, TimeSpan vrijemeDolaska, int vozaciId)
+        {
+            string sql = $"UPDATE dbo.Linija SET nazivLinije = '{nazivLinije}', pocetnaStanicaID = {pocetnaStanicaID}, zavrsnaStanicaID = {zavrsnaStanicaID}, " +
+                         $"vrijemePolaska = '{vrijemePolaska}', vrijemeDolaska = '{vrijemeDolaska}', vozaci_id = {vozaciId} WHERE id_linije = {idLinije}";
+
+            try
+            {
+                DB.OpenConnection();
+                DB.ExecuteCommand(sql);
+                DB.CloseConnection();
+            } catch (Exception ex)
+            {
+                MessageBox.Show($"Greška kod ažuriranja linije: {ex.Message}", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
     }
 }
