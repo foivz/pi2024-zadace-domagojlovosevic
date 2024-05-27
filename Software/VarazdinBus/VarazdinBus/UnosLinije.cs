@@ -93,13 +93,13 @@ namespace VarazdinBus
             TimeSpan vrijemeDolaska = timeDolaska.Value.TimeOfDay;
             int vozaciId = Convert.ToInt32(cmbVozac.SelectedValue);
 
-            // Dohvat ID-a odabrane linije
+           
             int selectedLinijaId = linija.IdLinije;
 
-            // Izvršavanje ažuriranja linije
+            
             LinijaRepository.IzmjeniLiniju(selectedLinijaId, nazivLinije, pocetnaStanicaID, zavrsnaStanicaID, vrijemePolaska, vrijemeDolaska, vozaciId);
 
-            // Obavijest korisniku o uspješnom ažuriranju
+            
             MessageBox.Show("Linija je uspješno izmijenjena.", "Uspjeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
