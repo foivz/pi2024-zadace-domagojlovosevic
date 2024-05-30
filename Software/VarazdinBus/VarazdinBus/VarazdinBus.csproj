@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PregledVozaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledVozaca.Designer.cs">
+      <DependentUpon>PregledVozaca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PregledLinija.resx">
       <DependentUpon>PregledLinija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledVozaca.resx">
+      <DependentUpon>PregledVozaca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
