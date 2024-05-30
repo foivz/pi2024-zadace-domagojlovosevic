@@ -93,5 +93,15 @@ namespace VarazdinBus.Repositories
             DB.CloseConnection();
             return vozac.imeVozaca + " " + vozac.prezimeVozaca;
         }
+        public static void CreateVozac(string imeVozaca, string prezimeVozaca, string username, string password, string dozvola, DateTime datumRodjenja, DateTime datumPocetka)
+        {
+            string sql = $"INSERT INTO dbo.vozaci (username, password, ime_vozaca, prezime_vozaca, dozvola, datum_rodjenja, datum_pocetka) " +
+                $"VALUES ('{username}', '{password}', '{imeVozaca}', '{prezimeVozaca}', '{dozvola}', '{datumRodjenja.ToString("yyyy-MM-dd")}', '{datumPocetka.ToString("yyyy-MM-dd")}')";
+
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
     }
 }
