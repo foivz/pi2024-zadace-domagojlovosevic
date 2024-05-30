@@ -21,5 +21,10 @@ namespace VarazdinBus
         {
 
         }
+
+        private void btnOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -30,21 +30,21 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblVozaci = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtIme = new System.Windows.Forms.TextBox();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.txtDozvola = new System.Windows.Forms.TextBox();
+            this.dateRodjenja = new System.Windows.Forms.DateTimePicker();
+            this.dateZaposlenja = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnUnesi = new System.Windows.Forms.Button();
+            this.btnDodajVozaca = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,41 +67,41 @@
             this.lblVozaci.TabIndex = 1;
             this.lblVozaci.Text = "Vozači";
             // 
-            // textBox1
+            // txtIme
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 278);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtIme.Location = new System.Drawing.Point(12, 278);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(100, 20);
+            this.txtIme.TabIndex = 2;
             // 
-            // textBox2
+            // txtPrezime
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 323);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtPrezime.Location = new System.Drawing.Point(12, 323);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(100, 20);
+            this.txtPrezime.TabIndex = 3;
             // 
-            // textBox5
+            // txtDozvola
             // 
-            this.textBox5.Location = new System.Drawing.Point(274, 278);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.txtDozvola.Location = new System.Drawing.Point(274, 278);
+            this.txtDozvola.Name = "txtDozvola";
+            this.txtDozvola.Size = new System.Drawing.Size(100, 20);
+            this.txtDozvola.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dateRodjenja
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(410, 278);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateRodjenja.Location = new System.Drawing.Point(410, 278);
+            this.dateRodjenja.Name = "dateRodjenja";
+            this.dateRodjenja.Size = new System.Drawing.Size(200, 20);
+            this.dateRodjenja.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // dateZaposlenja
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(410, 323);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dateZaposlenja.Location = new System.Drawing.Point(410, 323);
+            this.dateZaposlenja.Name = "dateZaposlenja";
+            this.dateZaposlenja.Size = new System.Drawing.Size(200, 20);
+            this.dateZaposlenja.TabIndex = 8;
+            this.dateZaposlenja.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label1
             // 
@@ -139,20 +139,20 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Korisničko ime";
             // 
-            // textBox3
+            // txtPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 326);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(138, 326);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 12;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // textBox4
+            // txtUsername
             // 
-            this.textBox4.Location = new System.Drawing.Point(138, 278);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtUsername.Location = new System.Drawing.Point(138, 278);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.TabIndex = 11;
             // 
             // label5
             // 
@@ -181,18 +181,18 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Datum zaposlenja";
             // 
-            // btnUnesi
+            // btnDodajVozaca
             // 
-            this.btnUnesi.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnUnesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnesi.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUnesi.Location = new System.Drawing.Point(658, 399);
-            this.btnUnesi.Name = "btnUnesi";
-            this.btnUnesi.Size = new System.Drawing.Size(130, 39);
-            this.btnUnesi.TabIndex = 25;
-            this.btnUnesi.Text = "Dodaj Vozača";
-            this.btnUnesi.UseVisualStyleBackColor = false;
+            this.btnDodajVozaca.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDodajVozaca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDodajVozaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajVozaca.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDodajVozaca.Location = new System.Drawing.Point(658, 399);
+            this.btnDodajVozaca.Name = "btnDodajVozaca";
+            this.btnDodajVozaca.Size = new System.Drawing.Size(130, 39);
+            this.btnDodajVozaca.TabIndex = 25;
+            this.btnDodajVozaca.Text = "Dodaj Vozača";
+            this.btnDodajVozaca.UseVisualStyleBackColor = false;
             // 
             // btnOdustani
             // 
@@ -203,6 +203,7 @@
             this.btnOdustani.TabIndex = 26;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // PregledVozaca
             // 
@@ -210,21 +211,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.btnUnesi);
+            this.Controls.Add(this.btnDodajVozaca);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateZaposlenja);
+            this.Controls.Add(this.dateRodjenja);
+            this.Controls.Add(this.txtDozvola);
+            this.Controls.Add(this.txtPrezime);
+            this.Controls.Add(this.txtIme);
             this.Controls.Add(this.lblVozaci);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -242,21 +243,21 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblVozaci;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox txtIme;
+        private System.Windows.Forms.TextBox txtPrezime;
+        private System.Windows.Forms.TextBox txtDozvola;
+        private System.Windows.Forms.DateTimePicker dateRodjenja;
+        private System.Windows.Forms.DateTimePicker dateZaposlenja;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnUnesi;
+        private System.Windows.Forms.Button btnDodajVozaca;
         private System.Windows.Forms.Button btnOdustani;
     }
 }

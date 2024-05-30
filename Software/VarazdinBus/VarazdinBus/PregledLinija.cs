@@ -77,5 +77,13 @@ namespace VarazdinBus
                 PrikaziLinije();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PregledVozaca pregledVozaca = new PregledVozaca();
+            Hide();
+            pregledVozaca.ShowDialog();
+            Close();
+        }
     }
 }
