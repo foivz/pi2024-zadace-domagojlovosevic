@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VarazdinBus.Models;
+using VarazdinBus.Repositories;
 
 namespace VarazdinBus
 {
@@ -25,6 +27,29 @@ namespace VarazdinBus
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnDodajVozaca_Click(object sender, EventArgs e)
+        {
+            string ime = txtIme.Text;
+            string prezime = txtPrezime.Text;
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            string dozvola = txtDozvola.Text;
+            DateTime datumRodjenja = dateRodjenja.Value;
+            DateTime datumZaposlenja = dateZaposlenja.Value;
+
+            VozacRepository.CreateVozac(ime, prezime, username, password, dozvola, datumRodjenja, datumZaposlenja);
+            PrikaziVozace();
+        }
+        private void PrikaziVozace()
+        {
+            var vozaci = VozacRepository.GetAllVozaci();
+            dataGridView1.DataSource = vozaci;
+        }
+        private void PregledVozaca_Load(object sender, EventArgs e)
+        {
+            PrikaziVozace();
         }
     }
 }

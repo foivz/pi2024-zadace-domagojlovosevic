@@ -193,6 +193,7 @@
             this.btnDodajVozaca.TabIndex = 25;
             this.btnDodajVozaca.Text = "Dodaj Vozača";
             this.btnDodajVozaca.UseVisualStyleBackColor = false;
+            this.btnDodajVozaca.Click += new System.EventHandler(this.btnDodajVozaca_Click);
             // 
             // btnOdustani
             // 
@@ -233,6 +234,7 @@
             this.Name = "PregledVozaca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pregled vozaca";
+            this.Load += new System.EventHandler(this.PregledVozaca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
