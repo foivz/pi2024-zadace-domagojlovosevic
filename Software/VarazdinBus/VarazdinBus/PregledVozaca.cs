@@ -26,6 +26,9 @@ namespace VarazdinBus
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
+            PregledLinija pregledLinija = new PregledLinija();
+            Hide();
+            pregledLinija.ShowDialog();
             Close();
         }
 

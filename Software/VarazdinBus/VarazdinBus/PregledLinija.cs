@@ -43,11 +43,19 @@ namespace VarazdinBus
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string odabranaLinija = dataGridView1.SelectedRows[0].Cells["NazivLinije"].Value.ToString();
-            UnosLinije unosLinije = new UnosLinije(odabranaLinija);
-            Hide();
-            unosLinije.ShowDialog();
-            Close();
+            try
+            {
+                string odabranaLinija = dataGridView1.SelectedRows[0].Cells["NazivLinije"].Value.ToString();
+
+                UnosLinije unosLinije = new UnosLinije(odabranaLinija);
+                Hide();
+                unosLinije.ShowDialog();
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Greška kod brisanja podataka, odaberite cijeli red kada želite obrisati liniju", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
